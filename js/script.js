@@ -1,7 +1,10 @@
 const tanah = document.querySelectorAll('.tanah');
 const tikus = document.querySelectorAll('.tikus');
+const papanSkor = document.querySelector('.papan-skor');
 
 let tanahSebelumnya;
+let selesai;
+let skor;
 
 function randomTanah(tanah) {
     const t = Math.floor(Math.random() * tanah.length);
@@ -20,10 +23,33 @@ function randomWaktu(min, max) {
 function munculkanTikus() {
     const tRandom = randomTanah(tanah);
     const wRandom = randomWaktu(300, 1000);
-
     tRandom.classList.add('muncul');
+
     setTimeout(() => {
         tRandom.classList.remove('muncul');
-        munculkanTikus();
+        if (!selesai) {
+            munculkanTikus();
+        }
     }, wRandom);
 }
+
+function mulai() {
+    selesai = false;
+    skor = 0;
+    papanSkor.textContent = 0;
+    munculkanTikus();
+    setTimeout(() => {
+        selesai = true;
+    }, 1000);
+}
+
+function pukul() {
+    skor++;
+    papanSkor.textContent = skor;
+}
+
+tikus.forEach(t => {
+    t.addEventListener('click', function () {
+        console.log(this);
+    })
+})
