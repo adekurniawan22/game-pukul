@@ -39,7 +39,7 @@ h1,h2{
     background: url(../img/tikus.png)bottom center no-repeat;
     background-size: 60%;
     position: absolute;
-    top: 100px;
+    top: 150px;
     transition: top 0.3s;
 }
 

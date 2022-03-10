@@ -40,16 +40,15 @@ function mulai() {
     munculkanTikus();
     setTimeout(() => {
         selesai = true;
-    }, 1000);
+    }, 15000);
 }
 
 function pukul() {
     skor++;
+    this.parentNode.className = 'tanah';
     papanSkor.textContent = skor;
 }
 
 tikus.forEach(t => {
-    t.addEventListener('click', function () {
-        console.log(this);
-    })
+    t.addEventListener('click', pukul)
 })
