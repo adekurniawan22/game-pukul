@@ -43,3 +43,16 @@ h1{
 .tanah.muncul .tikus{
     top: -15px;
 }
+
+.tombol-mulai{
+    font-size: 25px;
+    padding: 10px;
+    display: block;
+    margin: auto;
+    background-color: white;
+    border: 1px solid white;
+}
+
+.tombol-mulai:hover{
+    background-color: green;
+}

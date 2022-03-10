@@ -13,11 +13,17 @@ function randomTanah(tanah) {
     return tRandom;
 }
 
+function randomWaktu(min, max) {
+    return Math.round(Math.random() * (max - min) + min);
+}
+
 function munculkanTikus() {
     const tRandom = randomTanah(tanah);
+    const wRandom = randomWaktu(300, 1000);
+
     tRandom.classList.add('muncul');
     setTimeout(() => {
         tRandom.classList.remove('muncul');
         munculkanTikus();
-    }, 500);
+    }, wRandom);
 }
